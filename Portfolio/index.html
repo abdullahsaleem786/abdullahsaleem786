@@ -1,0 +1,72 @@
+<html>
+<head>
+    <title>Abdullah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+   
+</head>
+<style>
+    #main{
+        animation-duration: 3s;
+    animation-name: slidein;
+    box-shadow: 10px 5px 5px #9333EA ;
+  }
+  
+  @keyframes slidein {
+    from {
+      translate: 150vw 0;
+      scale: 200% 1;
+    }
+  
+    to {
+      translate: 0 0;
+      scale: 100% 1;
+    }
+  }
+    
+</style>
+<body class="bg-gray-900 text-white font-roboto">
+    <div class="bg-purple-600 text-center py-2 text-sm">
+        
+    </div>
+    <nav class="flex justify-between items-center p-6">
+        <div class="text-3xl font-bold">Abdullah.Saleem</div>
+        <div class="space-x-8">
+            <a href="education.html" class="text-gray-400 hover:text-white">Education</a>
+            <a href="skills.html" class="text-gray-400 hover:text-white">Skill</a>
+            <a href="#" class="text-gray-400 hover:text-white">Projects</a>
+            <a href="contact.html" style="box-shadow: 0px 5px 10px #9333EA ;" class="bg-purple-600 text-white px-4 py-2 rounded" >Contact</a>
+        </div>
+    </nav>
+    <div class="flex items-center justify-center h-screen">
+        <div class="max-w-4xl mx-auto flex items-center">
+            <div class="w-1/2">
+                <img src="picAbdullah.png" id="main" alt="A man wearing glasses and, looking up and holding his hat" class="rounded-lg shadow-lg">
+            </div>
+            <div class="w-1/2 pl-12" id="main">
+                <h1 class="text-5xl font-bold leading-tight">
+                    I'm Abdullah.<br>
+                    A Web Developer<br>
+                    based in <span class="text-purple-600">Pakistan</span>.
+                </h1>
+                <p style="box-shadow: 10px 5px 5px #9333EA ;" id="main" class="mt-6 text-lg text-gray-400">
+                    I'm probably the most passionate web developer you will ever get to work with. If you have a great project that needs some amazing skills, I'm your guy.
+                </p>
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+   document.getElementById('menu-toggle').addEventListener('click', function() {
+            var menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        });
+  </script>
+</body>
+</html>

@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #16171C;
+    color: #9333EA;
+}
+
+section#education {
+    margin: 40px;
+    
+}
+
+.education-item1 {
+    margin-bottom: 20px;
+    font-weight: bolder;
+    color: #fff;
+    
+    
+}
+.education-item2 {
+    margin-bottom: 20px;
+    font-weight: bolder;
+    color: #fff;
+    
+    
+}
+.education-item3 {
+    margin-bottom: 20px;
+    font-weight: bolder;
+    color: #fff;
+    
+    
+}
+
+  h2 {
+    margin-left: 250px;
+        animation-duration: 3s;
+        animation-name: slidein;
+        font-size: 35px;
+      }
+      
+      @keyframes slidein {
+        from {
+          translate: 150vw 0;
+          scale: 200% 1;
+        }
+      
+        to {
+          translate: 0 0;
+          scale: 100% 1;
+        }
+      }
+
+h3 {
+    margin: 0;
+}
+
+p {
+    margin: 5px 0 0 0;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.education-item1{
+    height: 200px;
+    width: 500px;
+    margin-top: 20px;
+    text-align: center;
+    border: 1px solid #9333EA ;
+    padding-top: 20px;
+}
+.education-item2{
+    height: 200px;
+    width: 500px;
+    margin-top: 70px;
+    text-align: center;
+    border: 1px solid #9333EA ;
+    padding-top: 20px;
+}
+.education-item3{
+    height: 200px;
+    width: 500px;
+    margin-top: 50px;
+    text-align: center;
+    border: 1px solid #9333EA ;
+    padding-top: 20px;
+}
+.education-item1 {
+    animation-duration: 3s;
+    animation-name: slidein;
+    box-shadow: 10px 5px 5px #9333EA ;
+  }
+  
+  @keyframes slidein {
+    from {
+      translate: 150vw 0;
+      scale: 200% 1;
+    }
+  
+    to {
+      translate: 0 0;
+      scale: 100% 1;
+    }
+  }
+  .education-item2 {
+    animation-duration: 3s;
+    animation-name: slidein;
+    box-shadow: 10px 5px 5px #9333EA ;
+  }
+  
+  @keyframes slidein {
+    from {
+      translate: 150vw 0;
+      scale: 200% 1;
+    }
+  
+    to {
+      translate: 0 0;
+      scale: 100% 1;
+    }
+  }
+  .education-item3 {
+    animation-duration: 3s;
+    animation-name: slidein;
+    box-shadow: 10px 5px 5px #9333EA ;
+  }
+  
+  @keyframes slidein {
+    from {
+      translate: 150vw 0;
+      scale: 200% 1;
+    }
+  
+    to {
+      translate: 0 0;
+      scale: 100% 1;
+    }
+  }
+  
