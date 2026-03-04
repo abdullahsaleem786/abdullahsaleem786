@@ -2,8 +2,8 @@ name: Update GitHub City
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # runs every day at midnight
-  workflow_dispatch:       # allows manual run
+    - cron: "0 0 * * *"
+  workflow_dispatch:
 
 jobs:
   screenshot:
@@ -11,12 +11,28 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Screenshot GitHub City
-        uses: swinton/screenshot-website@v1.x
+      - name: Setup Node
+        uses: actions/setup-node@v3
         with:
-          source: https://github-city-abdullahs-projects-c1b83a09.vercel.app/?user=abdullahsaleem786
-          destination: city.png
-          full-page: true
+          node-version: 18
+
+      - name: Install Puppeteer
+        run: npm install puppeteer
+
+      - name: Take screenshot
+        run: |
+          node -e "
+          const puppeteer = require('puppeteer');
+          (async () => {
+            const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
+            const page = await browser.newPage();
+            await page.setViewport({ width: 900, height: 500 });
+            await page.goto('https://github-city-abdullahs-projects-c1b83a09.vercel.app/?user=abdullahsaleem786', { waitUntil: 'networkidle2', timeout: 30000 });
+            await new Promise(r => setTimeout(r, 4000));
+            await page.screenshot({ path: 'city.png', clip: { x: 0, y: 0, width: 900, height: 500 } });
+            await browser.close();
+          })();
+          "
 
       - name: Commit city image
         run: |
@@ -25,12 +41,3 @@ jobs:
           git add city.png
           git commit -m "🏙️ Update city snapshot" || echo "No changes"
           git push
-```
-
----
-
-## Step 3 — Replace the Vercel URL
-
-In the yaml above, replace:
-```
-https://github-city-abdullahs-projects-c1b83a09.vercel.app
