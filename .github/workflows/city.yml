@@ -1,0 +1,36 @@
+name: Update GitHub City
+
+on:
+  schedule:
+    - cron: "0 0 * * *"  # runs every day at midnight
+  workflow_dispatch:       # allows manual run
+
+jobs:
+  screenshot:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Screenshot GitHub City
+        uses: swinton/screenshot-website@v1.x
+        with:
+          source: https://github-city-abdullahs-projects-c1b83a09.vercel.app/?user=abdullahsaleem786
+          destination: city.png
+          full-page: true
+
+      - name: Commit city image
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add city.png
+          git commit -m "🏙️ Update city snapshot" || echo "No changes"
+          git push
+```
+
+---
+
+## Step 3 — Replace the Vercel URL
+
+In the yaml above, replace:
+```
+https://github-city-abdullahs-projects-c1b83a09.vercel.app
