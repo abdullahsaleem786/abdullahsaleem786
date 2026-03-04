@@ -23,6 +23,5 @@
 
 [![View My GitHub City](https://img.shields.io/badge/🏙️_View_My_GitHub_City-Click_to_see_my_skyline-1d4ed8?style=for-the-badge)](https://github-city-abdullahs-projects-c1b83a09.vercel.app/?user=abdullahsaleem786)
 
-https://github.com/abdullahsaleem786/abdullahsaleem786/blob/main/.github/workflows/city.yml
 ![GitHub City](https://raw.githubusercontent.com/abdullahsaleem786/abdullahsaleem786/main/city.png)
 [![](https://visitcount.itsvg.in/api?id=abdullahsaleem786&icon=0&color=0)](https://visitcount.itsvg.in)
