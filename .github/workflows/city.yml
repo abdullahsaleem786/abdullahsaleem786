@@ -16,21 +16,37 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install Puppeteer
-        run: npm install puppeteer
+      - name: Clone github-city repo
+        run: git clone https://github.com/abdullahsaleem786/github-city.git city-app
 
-      - name: Take screenshot
+      - name: Install dependencies
         run: |
+          cd city-app
+          npm install --legacy-peer-deps
+
+      - name: Build the app
+        run: |
+          cd city-app
+          npm run build
+
+      - name: Install serve and Puppeteer
+        run: npm install -g serve && npm install puppeteer
+
+      - name: Serve and screenshot
+        run: |
+          serve -s city-app/build -l 3000 &
+          sleep 5
           node -e "
           const puppeteer = require('puppeteer');
           (async () => {
-            const browser = await puppeteer.launch({ args: ['--no-sandbox'] });
+            const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] });
             const page = await browser.newPage();
-            await page.setViewport({ width: 900, height: 500 });
-            await page.goto('https://github-city-abdullahs-projects-c1b83a09.vercel.app/?user=abdullahsaleem786', { waitUntil: 'networkidle2', timeout: 30000 });
-            await new Promise(r => setTimeout(r, 4000));
-            await page.screenshot({ path: 'city.png', clip: { x: 0, y: 0, width: 900, height: 500 } });
+            await page.setViewport({ width: 900, height: 520 });
+            await page.goto('http://localhost:3000/?user=abdullahsaleem786', { waitUntil: 'networkidle2', timeout: 30000 });
+            await new Promise(r => setTimeout(r, 6000));
+            await page.screenshot({ path: 'city.png', clip: { x: 0, y: 120, width: 900, height: 400 } });
             await browser.close();
+            console.log('Screenshot done!');
           })();
           "
 
