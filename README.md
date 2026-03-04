@@ -17,8 +17,5 @@
 
 ---
 [![](https://visitcount.itsvg.in/api?id=abdullahsaleem786&icon=0&color=0)](https://visitcount.itsvg.in)
-
 ## 🏙️ My GitHub City
-> The more I commit, the bigger my city grows!
-
-[![GitHub City](https://img.shields.io/badge/🏙️_View_My_GitHub_City-Click_Here-1d4ed8?style=for-the-badge)](https://github-city-abdullahs-projects-c1b83a09.vercel.app/?user=abdullahsaleem786)
+![GitHub City](https://raw.githubusercontent.com/abdullahsaleem786/abdullahsaleem786/main/city.png)
